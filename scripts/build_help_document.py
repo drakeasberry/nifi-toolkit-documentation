@@ -2,7 +2,6 @@ import os
 from arg_parser import nifi_parse_arguments
 from read_files import read_help_files
 from markdown_generator import NifiMarkdownGenerator
-#from config import HELP_FILES_DIR, OUTPUT_FILE
 
 def main():
     # Parse the arguments
