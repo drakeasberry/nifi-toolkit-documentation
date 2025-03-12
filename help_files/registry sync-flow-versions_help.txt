@@ -1,0 +1,42 @@
+## registry sync-flow-versions
+
+Syncs the versions of a flow to another flow, which could be in a different
+bucket or registry. This command assumes the intent is to maintain the exact
+version history across the two flows. The list of versions from the source flow
+will be compared to the destination flow, and any versions not present will be
+added. If --sourceProps is not provided then the source registry will be assumed
+to be the same as the destination registry.
+
+usage: sync-flow-versions
+ -bap,--basicAuthPassword <arg>     The password for basic auth
+ -bau,--basicAuthUsername <arg>     The username for basic auth
+ -btk,--bearerToken <arg>           The bearer token to be passed in the
+                                    Authorization header of a request
+ -cto,--connectionTimeout <arg>     Timeout parameter for creating a connection
+                                    to NiFi/Registry, specified in milliseconds
+ -f,--flowIdentifier <arg>          A flow identifier
+ -h,--help                          Help
+ -kp,--keyPasswd <arg>              The key password of the keystore being used
+ -ks,--keystore <arg>               A keystore to use for TLS/SSL connections
+ -ksp,--keystorePasswd <arg>        The password of the keystore being used
+ -kst,--keystoreType <arg>          The type of key store being used such as
+                                    PKCS12
+ -ot,--outputType <arg>             The type of output to produce (json or
+                                    simple)
+ -p,--properties <arg>              A properties file to load arguments from,
+                                    command line values will override anything
+                                    in the properties file, must contain full
+                                    path to file
+ -pe,--proxiedEntity <arg>          The identity of an entity to proxy
+ -rto,--readTimeout <arg>           Timeout parameter for reading from
+                                    NiFi/Registry, specified in milliseconds
+ -sf,--sourceFlowIdentifier <arg>   A flow identifier from the source registry
+ -sp,--sourceProps <arg>            A properties file to load for the source
+ -ts,--truststore <arg>             A truststore to use for TLS/SSL connections
+ -tsp,--truststorePasswd <arg>      The password of the truststore being used
+ -tst,--truststoreType <arg>        The type of trust store being used such as
+                                    PKCS12
+ -u,--baseUrl <arg>                 The URL to execute the command against
+ -verbose,--verbose                 Indicates that verbose output should be
+                                    provided
+

@@ -1,0 +1,59 @@
+## nifi fetch-params
+
+Fetches the parameters of a parameter provider.  If indicated, also applies the
+parameters to any referencing parameter contexts. When applying parameters, the
+--inputSource (-i) option specifies the location of a JSON file containing a
+parameterProviderParameterApplication entity, which allows detailed
+configuration of the applied groups and parameters.  For a simpler approach,
+this argument may be omitted, and all fetched groups will be mapped to parameter
+contexts of the same names, creating new parameter contexts if needed.  To
+select sensitive vs. non-sensitive parameters, the --sensitiveParamPattern
+(-spp) can be used.  If this is not supplied, all fetched parameters will
+default to sensitive.  Note that the --inputSource argument overrides any
+parameter sensitivity specified in the --sensitiveParamPattern argument.
+
+usage: fetch-params
+ -ap,--applyParameters                If specified, the fetched parameters will
+                                      also be applied to all referencing
+                                      parameter contexts
+ -bap,--basicAuthPassword <arg>       The password for basic auth
+ -bau,--basicAuthUsername <arg>       The username for basic auth
+ -btk,--bearerToken <arg>             The bearer token to be passed in the
+                                      Authorization header of a request
+ -cto,--connectionTimeout <arg>       Timeout parameter for creating a
+                                      connection to NiFi/Registry, specified in
+                                      milliseconds
+ -h,--help                            Help
+ -i,--input <arg>                     A local file to read as input contents, a
+                                      directory to read files from or a public
+                                      URL to fetch
+ -kp,--keyPasswd <arg>                The key password of the keystore being
+                                      used
+ -ks,--keystore <arg>                 A keystore to use for TLS/SSL connections
+ -ksp,--keystorePasswd <arg>          The password of the keystore being used
+ -kst,--keystoreType <arg>            The type of key store being used such as
+                                      PKCS12
+ -ot,--outputType <arg>               The type of output to produce (json or
+                                      simple)
+ -p,--properties <arg>                A properties file to load arguments from,
+                                      command line values will override anything
+                                      in the properties file, must contain full
+                                      path to file
+ -pe,--proxiedEntity <arg>            The identity of an entity to proxy
+ -ppid,--paramProviderId <arg>        The id of a parameter provider
+ -rto,--readTimeout <arg>             Timeout parameter for reading from
+                                      NiFi/Registry, specified in milliseconds
+ -spp,--sensitiveParamPattern <arg>   A Regular Expression indicating the names
+                                      of parameters that should be fetched as
+                                      Sensitive.  If not specified, and
+                                      --inputSource (-i) is not specified, all
+                                      fetched parameters will be Sensitive.
+ -ts,--truststore <arg>               A truststore to use for TLS/SSL
+                                      connections
+ -tsp,--truststorePasswd <arg>        The password of the truststore being used
+ -tst,--truststoreType <arg>          The type of trust store being used such as
+                                      PKCS12
+ -u,--baseUrl <arg>                   The URL to execute the command against
+ -verbose,--verbose                   Indicates that verbose output should be
+                                      provided
+

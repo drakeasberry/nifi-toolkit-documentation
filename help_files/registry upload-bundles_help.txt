@@ -1,0 +1,48 @@
+## registry upload-bundles
+
+Performs a bulk upload of multiple bundles to the specified bucket in the
+registry. This command will look for files in the specified directory, and if
+recurse (-r) is specified then it will search child directories recursively. If
+fileExtension is specified then it will only consider files that have the
+specified extension, such as '.nar'
+
+usage: upload-bundles
+ -b,--bucketIdentifier <arg>        A bucket identifier
+ -bap,--basicAuthPassword <arg>     The password for basic auth
+ -bau,--basicAuthUsername <arg>     The username for basic auth
+ -btk,--bearerToken <arg>           The bearer token to be passed in the
+                                    Authorization header of a request
+ -cto,--connectionTimeout <arg>     Timeout parameter for creating a connection
+                                    to NiFi/Registry, specified in milliseconds
+ -ebd,--extensionBundleDir <arg>    A directory where extension bundles are
+                                    located
+ -ebt,--extensionBundleType <arg>   The type of extension bundle, either
+                                    nifi-nar or minifi-cpp
+ -fe,--fileExtension <arg>          A file extension such as '.nar'
+ -h,--help                          Help
+ -kp,--keyPasswd <arg>              The key password of the keystore being used
+ -ks,--keystore <arg>               A keystore to use for TLS/SSL connections
+ -ksp,--keystorePasswd <arg>        The password of the keystore being used
+ -kst,--keystoreType <arg>          The type of key store being used such as
+                                    PKCS12
+ -ot,--outputType <arg>             The type of output to produce (json or
+                                    simple)
+ -p,--properties <arg>              A properties file to load arguments from,
+                                    command line values will override anything
+                                    in the properties file, must contain full
+                                    path to file
+ -pe,--proxiedEntity <arg>          The identity of an entity to proxy
+ -r,--recursive                     Indicates the command should perform the
+                                    action recursively
+ -rto,--readTimeout <arg>           Timeout parameter for reading from
+                                    NiFi/Registry, specified in milliseconds
+ -skipSha256,--skipSha256           Skips the client side calculation of the
+                                    SHA-256 when uploading an extension bundle
+ -ts,--truststore <arg>             A truststore to use for TLS/SSL connections
+ -tsp,--truststorePasswd <arg>      The password of the truststore being used
+ -tst,--truststoreType <arg>        The type of trust store being used such as
+                                    PKCS12
+ -u,--baseUrl <arg>                 The URL to execute the command against
+ -verbose,--verbose                 Indicates that verbose output should be
+                                    provided
+

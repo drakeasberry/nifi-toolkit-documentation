@@ -1,0 +1,17 @@
+## demo quick-import
+
+Imports a flow from a file or a public URL into a pre-defined bucket named
+'Quick Import'. This command will create the bucket if it doesn't exist, and
+will create a new flow for each execution. The flow will then be imported to the
+given NiFi instance.
+
+usage: quick-import
+ -i,--input <arg>                     A local file to read as input contents, a
+                                      directory to read files from or a public
+                                      URL to fetch
+ -nifiProps,--nifiProps <arg>         A properties file to load for NiFi config
+ -nifiRegProps,--nifiRegProps <arg>   A properties file to load for NiFi
+                                      Registry config
+ -verbose,--verbose                   Indicates that verbose output should be
+                                      provided
+
